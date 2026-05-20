@@ -98,7 +98,11 @@ function Index() {
             <a href="#experiente" className="nv-btn nv-btn-secondary">Descoperă ritualurile</a>
           </div>
         </div>
-        <div className="nv-scroll">Scroll</div>
+        <div className="nv-hero-wave" aria-hidden>
+          <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,90 1440,40 L1440,90 L0,90 Z" fill="currentColor"/>
+          </svg>
+        </div>
       </section>
 
       {/* INTRO */}
