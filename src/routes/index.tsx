@@ -86,10 +86,8 @@ function Index() {
         <div ref={heroImgRef} className="nv-hero-image" />
         <div className="nv-hero-overlay" />
         <div className="nv-hero-vignette" />
-        <div className="nv-hero-frame" aria-hidden />
-        <div className="nv-hero-tag">Nevis Wellness &amp; Spa · Oradea</div>
-        <div className="nv-hero-vertical">Est · 2018 — Ritualuri pentru corp &amp; minte</div>
         <div className="nv-hero-content">
+          <div className="nv-hero-eyebrow">Nevis Wellness &amp; Spa · Oradea</div>
           <h1>
             <span className="l1">Vino cum ești.</span>
             <span className="l2">Pleacă altfel.</span>
@@ -98,14 +96,6 @@ function Index() {
           <div className="nv-hero-ctas">
             <a href="#" className="nv-btn nv-btn-primary">Rezervă o experiență</a>
             <a href="#experiente" className="nv-btn nv-btn-secondary">Descoperă ritualurile</a>
-          </div>
-        </div>
-        <div className="nv-hero-strip" aria-hidden>
-          <div className="nv-marquee">
-            <span>Rooftop Jacuzzi</span><span>Baia de aburi</span><span>Aromasauna</span>
-            <span>Ritualuri Semnătură</span><span>Card Cadou Nevis</span><span>Pachete cu Cazare</span>
-            <span>Rooftop Jacuzzi</span><span>Baia de aburi</span><span>Aromasauna</span>
-            <span>Ritualuri Semnătură</span><span>Card Cadou Nevis</span><span>Pachete cu Cazare</span>
           </div>
         </div>
       </section>
