@@ -129,16 +129,19 @@ function Index() {
           </div>
           <div className="nv-dorinte-grid">
             {[
-              { n: "— 01", h: "Vreau să mă răsfăț", p: "Lumânări, unturi parfumate, mătase pe piele. Ritualuri făcute să-ți amintească ce înseamnă să fii alintat.", cta: "Vezi ritualurile" },
-              { n: "— 02", h: "Vreau să evadez", p: "Aburul băii turcești, jacuzzi-ul de pe acoperiș, un pahar rece în mână. Câteva ore în care nimeni nu te caută.", cta: "Vezi facilitățile" },
-              { n: "— 03", h: "Vreau să respir", p: "Pentru mintea care n-a mai tăcut de mult. Atingeri lente, uleiuri calde, liniște aproape completă.", cta: "Vezi ritualurile" },
-              { n: "— 04", h: "Vreau să strălucesc", p: "Pielea își găsește lumina. Ritualuri de drenaj, îmbujorare, hrănire profundă — pentru tenul și corpul tău.", cta: "Vezi ritualurile" },
+              { n: "— 01", img: "https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?w=900&q=90", h: "Vreau să mă răsfăț", p: "Lumânări, unturi parfumate, mătase pe piele. Ritualuri făcute să-ți amintească ce înseamnă să fii alintat.", cta: "Vezi ritualurile" },
+              { n: "— 02", img: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=900&q=90", h: "Vreau să evadez", p: "Aburul băii turcești, jacuzzi-ul de pe acoperiș, un pahar rece în mână. Câteva ore în care nimeni nu te caută.", cta: "Vezi facilitățile" },
+              { n: "— 03", img: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=900&q=90", h: "Vreau să respir", p: "Pentru mintea care n-a mai tăcut de mult. Atingeri lente, uleiuri calde, liniște aproape completă.", cta: "Vezi ritualurile" },
+              { n: "— 04", img: "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=900&q=90", h: "Vreau să strălucesc", p: "Pielea își găsește lumina. Ritualuri de drenaj, îmbujorare, hrănire profundă — pentru tenul și corpul tău.", cta: "Vezi ritualurile" },
             ].map((d, i) => (
               <a href="#" key={i} className={`nv-dorinta reveal reveal-d${i + 1}`}>
-                <div className="nv-dorinta-num">{d.n}</div>
-                <h3>{d.h}</h3>
-                <p>{d.p}</p>
-                <div className="nv-dorinta-arrow">{d.cta} →</div>
+                <div className="nv-dorinta-img" style={{ backgroundImage: `url(${d.img})` }} aria-hidden />
+                <div className="nv-dorinta-body">
+                  <div className="nv-dorinta-num">{d.n}</div>
+                  <h3>{d.h}</h3>
+                  <p>{d.p}</p>
+                  <div className="nv-dorinta-arrow">{d.cta} →</div>
+                </div>
               </a>
             ))}
           </div>
