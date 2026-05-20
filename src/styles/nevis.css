@@ -335,13 +335,20 @@
 .nv-pachete-intro p { color: var(--muted); margin-top: 28px; font-size: 17px; line-height: 1.8; }
 .nv-pachete-list { display: grid; gap: 16px; }
 .nv-pachet {
-  display: grid; grid-template-columns: 80px 1fr 180px 180px; gap: 32px; padding: 36px 36px;
+  display: grid; grid-template-columns: 60px 140px 1fr 150px 160px; gap: 28px; padding: 24px 28px;
   align-items: center; text-decoration: none; color: var(--ink);
   transition: all 0.5s cubic-bezier(.2,.7,.2,1); position: relative;
   background: var(--cream); border-radius: 24px; border: 1px solid var(--line);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm); overflow: hidden;
 }
 .nv-pachet:hover { transform: translateY(-4px); background: var(--cream-warm); border-color: var(--copper); box-shadow: var(--shadow-md); }
+.nv-pachet-thumb {
+  width: 140px; height: 110px; border-radius: 18px;
+  background-size: cover; background-position: center;
+  transition: transform 1.2s cubic-bezier(.2,.7,.2,1);
+  box-shadow: var(--shadow-sm);
+}
+.nv-pachet:hover .nv-pachet-thumb { transform: scale(1.04); }
 .nv-pachet-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 22px; color: var(--copper); letter-spacing: 0.06em; font-weight: 500; }
 .nv-pachet-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 400; line-height: 1.2; margin-bottom: 10px; transition: color 0.4s ease; }
 .nv-pachet:hover .nv-pachet-info h3 { color: var(--copper); font-style: italic; }
