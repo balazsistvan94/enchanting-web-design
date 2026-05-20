@@ -86,10 +86,12 @@ function Index() {
         <div ref={heroImgRef} className="nv-hero-image" />
         <div className="nv-hero-overlay" />
         <div className="nv-hero-vignette" />
+        <div className="nv-hero-frame" aria-hidden />
+        <div className="nv-hero-tag">Nevis Wellness &amp; Spa · Oradea</div>
+        <div className="nv-hero-vertical">Est · 2018 — Ritualuri pentru corp &amp; minte</div>
         <div className="nv-hero-content">
-          <div className="nv-hero-eyebrow">Nevis Wellness &amp; Spa · Oradea</div>
           <h1>
-            <span className="l1">Vino cum ești.</span><br />
+            <span className="l1">Vino cum ești.</span>
             <span className="l2">Pleacă altfel.</span>
           </h1>
           <p>Un loc unde ora nu se grăbește, telefonul tace, iar tu îți redescoperi propriul ritm.</p>
@@ -98,10 +100,13 @@ function Index() {
             <a href="#experiente" className="nv-btn nv-btn-secondary">Descoperă ritualurile</a>
           </div>
         </div>
-        <div className="nv-hero-wave" aria-hidden>
-          <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,90 1440,40 L1440,90 L0,90 Z" fill="currentColor"/>
-          </svg>
+        <div className="nv-hero-strip" aria-hidden>
+          <div className="nv-marquee">
+            <span>Rooftop Jacuzzi</span><span>Baia de aburi</span><span>Aromasauna</span>
+            <span>Ritualuri Semnătură</span><span>Card Cadou Nevis</span><span>Pachete cu Cazare</span>
+            <span>Rooftop Jacuzzi</span><span>Baia de aburi</span><span>Aromasauna</span>
+            <span>Ritualuri Semnătură</span><span>Card Cadou Nevis</span><span>Pachete cu Cazare</span>
+          </div>
         </div>
       </section>
 
