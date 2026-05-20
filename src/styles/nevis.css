@@ -194,6 +194,21 @@
   .nv-marquee span { gap: 36px; font-size: 10px; }
 }
 
+.nv-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+  padding: 18px 40px; text-decoration: none;
+  font-family: 'Jost', sans-serif; font-size: 11px;
+  letter-spacing: 0.24em; text-transform: uppercase; font-weight: 500;
+  transition: all 0.5s cubic-bezier(.2,.7,.2,1); border: 1px solid transparent;
+  border-radius: 4px; position: relative; overflow: hidden;
+}
+.nv-btn-primary { background: var(--copper); color: var(--cream); box-shadow: var(--shadow-copper); }
+.nv-btn-primary:hover { background: var(--cream); color: var(--ink); transform: translateY(-3px); box-shadow: 0 22px 50px -15px rgba(245, 239, 227, 0.4); }
+.nv-btn-secondary { background: transparent; color: var(--cream); border-color: rgba(245,239,227,0.5); backdrop-filter: blur(8px); }
+.nv-btn-secondary:hover { background: rgba(245, 239, 227, 0.12); border-color: var(--copper-glow); color: var(--copper-glow); transform: translateY(-3px); }
+
+
+
 /* ==================== SECTION BASE ==================== */
 .nv-sec { padding: 150px 48px; position: relative; }
 .nv-container { max-width: 1320px; margin: 0 auto; position: relative; }
