@@ -102,12 +102,21 @@ function Index() {
 
       {/* INTRO */}
       <section className="nv-intro reveal">
-        <div className="nv-intro-content">
-          <p>
-            La Nevis, lumânările ard lent, aburul învăluie încet, iar atingerea știe exact unde să rămână.{" "}
-            <em>Nu te scoatem din lume — te aducem înapoi la tine.</em>{" "}
-            În fiecare ritual lăsăm spațiu pentru tăcere, pentru respirație adâncă, pentru plăcerea aproape uitată de a nu face nimic.
-          </p>
+        <div className="nv-intro-grid">
+          <div className="nv-intro-image nv-intro-image-1" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=900&q=90')" }} aria-hidden />
+          <div className="nv-intro-block">
+            <span className="nv-intro-num">01</span>
+            <p>La Nevis, lumânările ard lent, aburul învăluie încet, iar atingerea știe exact unde să rămână.</p>
+          </div>
+          <div className="nv-intro-block nv-intro-block-accent">
+            <span className="nv-intro-num">02</span>
+            <p><em>Nu te scoatem din lume — te aducem înapoi la tine.</em></p>
+          </div>
+          <div className="nv-intro-image nv-intro-image-2" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1583416750470-965b2707b355?w=900&q=90')" }} aria-hidden />
+          <div className="nv-intro-block nv-intro-block-wide">
+            <span className="nv-intro-num">03</span>
+            <p>În fiecare ritual lăsăm spațiu pentru tăcere, pentru respirație adâncă, pentru plăcerea aproape uitată de a nu face nimic.</p>
+          </div>
         </div>
       </section>
 
