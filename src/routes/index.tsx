@@ -313,7 +313,7 @@ function Index() {
         <div className="nv-container">
           <div className="nv-footer-top">
             <div>
-              <div className="nv-footer-brand">N<em>evis</em> Spa</div>
+              <img src={nevisLogo} alt="Hotel Nevis" className="nv-footer-brand-img" />
               <p className="nv-footer-tag">Vino cum ești. Pleacă altfel.</p>
             </div>
             <div className="nv-footer-col">
