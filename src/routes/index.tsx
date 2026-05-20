@@ -102,12 +102,21 @@ function Index() {
 
       {/* INTRO */}
       <section className="nv-intro reveal">
-        <div className="nv-intro-content">
-          <p>
-            La Nevis, lumânările ard lent, aburul învăluie încet, iar atingerea știe exact unde să rămână.{" "}
-            <em>Nu te scoatem din lume — te aducem înapoi la tine.</em>{" "}
-            În fiecare ritual lăsăm spațiu pentru tăcere, pentru respirație adâncă, pentru plăcerea aproape uitată de a nu face nimic.
-          </p>
+        <div className="nv-intro-grid">
+          <div className="nv-intro-image nv-intro-image-1" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=900&q=90')" }} aria-hidden />
+          <div className="nv-intro-block">
+            <span className="nv-intro-num">01</span>
+            <p>La Nevis, lumânările ard lent, aburul învăluie încet, iar atingerea știe exact unde să rămână.</p>
+          </div>
+          <div className="nv-intro-block nv-intro-block-accent">
+            <span className="nv-intro-num">02</span>
+            <p><em>Nu te scoatem din lume — te aducem înapoi la tine.</em></p>
+          </div>
+          <div className="nv-intro-image nv-intro-image-2" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1583416750470-965b2707b355?w=900&q=90')" }} aria-hidden />
+          <div className="nv-intro-block nv-intro-block-wide">
+            <span className="nv-intro-num">03</span>
+            <p>În fiecare ritual lăsăm spațiu pentru tăcere, pentru respirație adâncă, pentru plăcerea aproape uitată de a nu face nimic.</p>
+          </div>
         </div>
       </section>
 
@@ -120,16 +129,19 @@ function Index() {
           </div>
           <div className="nv-dorinte-grid">
             {[
-              { n: "— 01", h: "Vreau să mă răsfăț", p: "Lumânări, unturi parfumate, mătase pe piele. Ritualuri făcute să-ți amintească ce înseamnă să fii alintat.", cta: "Vezi ritualurile" },
-              { n: "— 02", h: "Vreau să evadez", p: "Aburul băii turcești, jacuzzi-ul de pe acoperiș, un pahar rece în mână. Câteva ore în care nimeni nu te caută.", cta: "Vezi facilitățile" },
-              { n: "— 03", h: "Vreau să respir", p: "Pentru mintea care n-a mai tăcut de mult. Atingeri lente, uleiuri calde, liniște aproape completă.", cta: "Vezi ritualurile" },
-              { n: "— 04", h: "Vreau să strălucesc", p: "Pielea își găsește lumina. Ritualuri de drenaj, îmbujorare, hrănire profundă — pentru tenul și corpul tău.", cta: "Vezi ritualurile" },
+              { n: "— 01", img: "https://images.unsplash.com/photo-1610465299996-30f240ac2b1c?w=900&q=90", h: "Vreau să mă răsfăț", p: "Lumânări, unturi parfumate, mătase pe piele. Ritualuri făcute să-ți amintească ce înseamnă să fii alintat.", cta: "Vezi ritualurile" },
+              { n: "— 02", img: "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=900&q=90", h: "Vreau să evadez", p: "Aburul băii turcești, jacuzzi-ul de pe acoperiș, un pahar rece în mână. Câteva ore în care nimeni nu te caută.", cta: "Vezi facilitățile" },
+              { n: "— 03", img: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=900&q=90", h: "Vreau să respir", p: "Pentru mintea care n-a mai tăcut de mult. Atingeri lente, uleiuri calde, liniște aproape completă.", cta: "Vezi ritualurile" },
+              { n: "— 04", img: "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=900&q=90", h: "Vreau să strălucesc", p: "Pielea își găsește lumina. Ritualuri de drenaj, îmbujorare, hrănire profundă — pentru tenul și corpul tău.", cta: "Vezi ritualurile" },
             ].map((d, i) => (
               <a href="#" key={i} className={`nv-dorinta reveal reveal-d${i + 1}`}>
-                <div className="nv-dorinta-num">{d.n}</div>
-                <h3>{d.h}</h3>
-                <p>{d.p}</p>
-                <div className="nv-dorinta-arrow">{d.cta} →</div>
+                <div className="nv-dorinta-img" style={{ backgroundImage: `url(${d.img})` }} aria-hidden />
+                <div className="nv-dorinta-body">
+                  <div className="nv-dorinta-num">{d.n}</div>
+                  <h3>{d.h}</h3>
+                  <p>{d.p}</p>
+                  <div className="nv-dorinta-arrow">{d.cta} →</div>
+                </div>
               </a>
             ))}
           </div>
@@ -210,12 +222,13 @@ function Index() {
           </div>
           <div className="nv-pachete-list">
             {[
-              { n: "I.", h: "Weekend de răsfăț", p: "Două nopți, două ritualuri semnătură, acces complet la SPA și mic dejun.", dur: "2 nopți", price: "de la 890 lei", unit: "/persoană" },
-              { n: "II.", h: "Mini-vacanță Nevis", p: "Trei nopți, trei ritualuri, acces nelimitat la toate facilitățile și cină festivă.", dur: "3 nopți", price: "de la 1.390 lei", unit: "/persoană" },
-              { n: "III.", h: "Retreat pentru doi", p: "Două nopți, ritualuri în doi, rooftop jacuzzi rezervat, cină la lumânări.", dur: "2 nopți", price: "de la 1.890 lei", unit: "/cuplu" },
+              { n: "I.", img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=90", h: "Weekend de răsfăț", p: "Două nopți, două ritualuri semnătură, acces complet la SPA și mic dejun.", dur: "2 nopți", price: "de la 890 lei", unit: "/persoană" },
+              { n: "II.", img: "https://images.unsplash.com/photo-1591088398332-8a7791972843?w=600&q=90", h: "Mini-vacanță Nevis", p: "Trei nopți, trei ritualuri, acces nelimitat la toate facilitățile și cină festivă.", dur: "3 nopți", price: "de la 1.390 lei", unit: "/persoană" },
+              { n: "III.", img: "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600&q=90", h: "Retreat pentru doi", p: "Două nopți, ritualuri în doi, rooftop jacuzzi rezervat, cină la lumânări.", dur: "2 nopți", price: "de la 1.890 lei", unit: "/cuplu" },
             ].map((p, i) => (
               <a href="#" key={i} className="nv-pachet reveal">
                 <span className="nv-pachet-num">{p.n}</span>
+                <div className="nv-pachet-thumb" style={{ backgroundImage: `url(${p.img})` }} aria-hidden />
                 <div className="nv-pachet-info">
                   <h3>{p.h}</h3>
                   <p>{p.p}</p>
