@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
 import "../styles/nevis.css";
+import nevisLogo from "@/assets/nevis-logo.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -11,7 +12,7 @@ export const Route = createFileRoute("/")({
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,500&family=Figtree:wght@300;400;500;600&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" },
     ],
   }),
   component: Index,
@@ -69,7 +70,7 @@ function Index() {
 
       {/* NAV */}
       <nav ref={navRef} className="nv-nav">
-        <div className="nv-logo">N<em>evis</em></div>
+        <a href="#" aria-label="Nevis"><img src={nevisLogo} alt="Hotel Nevis Wellness & SPA" className="nv-logo-img" /></a>
         <ul className="nv-menu">
           <li><a href="#experiente">Experiențe</a></li>
           <li><a href="#pachete">Pachete</a></li>
@@ -312,7 +313,7 @@ function Index() {
         <div className="nv-container">
           <div className="nv-footer-top">
             <div>
-              <div className="nv-footer-brand">N<em>evis</em> Spa</div>
+              <img src={nevisLogo} alt="Hotel Nevis" className="nv-footer-brand-img" />
               <p className="nv-footer-tag">Vino cum ești. Pleacă altfel.</p>
             </div>
             <div className="nv-footer-col">
