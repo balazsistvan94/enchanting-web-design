@@ -222,12 +222,13 @@ function Index() {
           </div>
           <div className="nv-pachete-list">
             {[
-              { n: "I.", h: "Weekend de răsfăț", p: "Două nopți, două ritualuri semnătură, acces complet la SPA și mic dejun.", dur: "2 nopți", price: "de la 890 lei", unit: "/persoană" },
-              { n: "II.", h: "Mini-vacanță Nevis", p: "Trei nopți, trei ritualuri, acces nelimitat la toate facilitățile și cină festivă.", dur: "3 nopți", price: "de la 1.390 lei", unit: "/persoană" },
-              { n: "III.", h: "Retreat pentru doi", p: "Două nopți, ritualuri în doi, rooftop jacuzzi rezervat, cină la lumânări.", dur: "2 nopți", price: "de la 1.890 lei", unit: "/cuplu" },
+              { n: "I.", img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=90", h: "Weekend de răsfăț", p: "Două nopți, două ritualuri semnătură, acces complet la SPA și mic dejun.", dur: "2 nopți", price: "de la 890 lei", unit: "/persoană" },
+              { n: "II.", img: "https://images.unsplash.com/photo-1591088398332-8a7791972843?w=600&q=90", h: "Mini-vacanță Nevis", p: "Trei nopți, trei ritualuri, acces nelimitat la toate facilitățile și cină festivă.", dur: "3 nopți", price: "de la 1.390 lei", unit: "/persoană" },
+              { n: "III.", img: "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=600&q=90", h: "Retreat pentru doi", p: "Două nopți, ritualuri în doi, rooftop jacuzzi rezervat, cină la lumânări.", dur: "2 nopți", price: "de la 1.890 lei", unit: "/cuplu" },
             ].map((p, i) => (
               <a href="#" key={i} className="nv-pachet reveal">
                 <span className="nv-pachet-num">{p.n}</span>
+                <div className="nv-pachet-thumb" style={{ backgroundImage: `url(${p.img})` }} aria-hidden />
                 <div className="nv-pachet-info">
                   <h3>{p.h}</h3>
                   <p>{p.p}</p>
