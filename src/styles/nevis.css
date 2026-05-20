@@ -443,7 +443,8 @@
   .nv-reviews-grid { grid-template-columns: 1fr; gap: 24px; }
   .nv-semn-header, .nv-facil-header, .nv-contact-grid, .nv-cadou-wrap { grid-template-columns: 1fr; gap: 50px; }
   .nv-footer-top { grid-template-columns: 1fr 1fr; gap: 50px; }
-  .nv-pachet { grid-template-columns: 60px 1fr; grid-template-areas: "num info" ". duration" ". price"; gap: 14px 24px; padding: 28px; }
+  .nv-pachet { grid-template-columns: 1fr; grid-template-areas: "thumb" "num" "info" "duration" "price"; gap: 14px; padding: 22px; }
+  .nv-pachet-thumb { grid-area: thumb; width: 100%; height: 180px; }
   .nv-pachet-num { grid-area: num; }
   .nv-pachet-info { grid-area: info; }
   .nv-pachet-duration { grid-area: duration; }
