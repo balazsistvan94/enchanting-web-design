@@ -236,11 +236,11 @@
 .nv-dorinte-header { text-align: center; margin-bottom: 90px; }
 .nv-dorinte-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .nv-dorinta {
-  background: var(--cream); padding: 48px 36px 40px; text-decoration: none; color: var(--ink);
+  background: var(--cream); text-decoration: none; color: var(--ink);
   transition: all 0.6s cubic-bezier(.2,.7,.2,1); position: relative; overflow: hidden;
   border-radius: 28px;
   box-shadow: var(--shadow-sm);
-  display: flex; flex-direction: column; min-height: 380px;
+  display: flex; flex-direction: column;
 }
 .nv-dorinta::before {
   content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, var(--copper) 0%, var(--forest) 100%);
@@ -249,10 +249,16 @@
 .nv-dorinta > * { position: relative; z-index: 1; }
 .nv-dorinta:hover { color: var(--cream); transform: translateY(-12px); box-shadow: var(--shadow-copper); }
 .nv-dorinta:hover::before { opacity: 1; }
-.nv-dorinta-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: var(--copper); margin-bottom: 80px; transition: color 0.5s ease; letter-spacing: 0.06em; font-weight: 400; }
+.nv-dorinta-img {
+  aspect-ratio: 4/3; background-size: cover; background-position: center;
+  transition: transform 1.4s cubic-bezier(.2,.7,.2,1);
+}
+.nv-dorinta:hover .nv-dorinta-img { transform: scale(1.08); }
+.nv-dorinta-body { padding: 36px 32px 36px; display: flex; flex-direction: column; flex: 1; }
+.nv-dorinta-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: var(--copper); margin-bottom: 18px; transition: color 0.5s ease; letter-spacing: 0.06em; font-weight: 400; }
 .nv-dorinta:hover .nv-dorinta-num { color: var(--cream); }
-.nv-dorinta h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; line-height: 1.2; margin-bottom: 18px; font-style: italic; }
-.nv-dorinta p { font-size: 14px; line-height: 1.7; color: var(--muted); transition: color 0.5s ease; margin-bottom: 32px; flex: 1; }
+.nv-dorinta h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 400; line-height: 1.2; margin-bottom: 14px; font-style: italic; }
+.nv-dorinta p { font-size: 14px; line-height: 1.7; color: var(--muted); transition: color 0.5s ease; margin-bottom: 28px; flex: 1; }
 .nv-dorinta:hover p { color: rgba(245, 239, 227, 0.9); }
 .nv-dorinta-arrow { font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; color: var(--copper); transition: all 0.5s ease; font-weight: 500; }
 .nv-dorinta:hover .nv-dorinta-arrow { color: var(--cream); gap: 18px; }
