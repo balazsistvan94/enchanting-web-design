@@ -70,7 +70,7 @@ function Index() {
 
       {/* NAV */}
       <nav ref={navRef} className="nv-nav">
-        <div className="nv-logo">N<em>evis</em></div>
+        <a href="#" aria-label="Nevis"><img src={nevisLogo} alt="Hotel Nevis Wellness & SPA" className="nv-logo-img" /></a>
         <ul className="nv-menu">
           <li><a href="#experiente">Experiențe</a></li>
           <li><a href="#pachete">Pachete</a></li>
