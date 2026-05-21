@@ -475,3 +475,170 @@
   .nv-cadou-img::before { inset: 20px; }
   .nv-review { padding: 44px 32px; }
 }
+
+/* ==================== MASAJ SELECTOR PAGE ==================== */
+.nv-selector-page {
+  padding: 140px 0 80px;
+  background:
+    radial-gradient(ellipse 1200px 800px at 80% -10%, rgba(184, 132, 102, 0.10), transparent 60%),
+    radial-gradient(ellipse 1000px 700px at -10% 90%, rgba(90, 76, 62, 0.10), transparent 60%),
+    var(--cream);
+  min-height: 100vh;
+}
+.nv-selector-container { max-width: 1280px; margin: 0 auto; padding: 0 48px; position: relative; z-index: 2; }
+
+/* HERO */
+.nv-selector-hero { max-width: 880px; margin-bottom: 72px; }
+.nv-selector-eyebrow {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: 'Jost', sans-serif; font-weight: 400; font-size: 11px;
+  letter-spacing: 0.32em; text-transform: uppercase; color: var(--copper);
+  margin-bottom: 28px;
+}
+.nv-selector-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--copper); }
+.nv-selector-h1 {
+  font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(40px, 6vw, 80px); line-height: 1.05; letter-spacing: -0.02em;
+  color: var(--ink); margin-bottom: 28px;
+}
+.nv-selector-h1 span { font-style: italic; color: var(--forest); font-weight: 400; }
+.nv-selector-lead {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300;
+  font-size: 22px; line-height: 1.5; color: var(--ink-soft); max-width: 680px;
+}
+.nv-selector-sub {
+  font-family: 'Jost', sans-serif; font-weight: 300; font-size: 15px;
+  line-height: 1.75; color: var(--ink-soft); max-width: 620px; margin-top: 18px;
+}
+
+/* INSTRUCTION */
+.nv-selector-instruction {
+  display: flex; align-items: center; gap: 18px; margin-bottom: 28px;
+  font-family: 'Jost', sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted);
+}
+.nv-selector-line { flex: 1; height: 1px; background: var(--line); }
+
+/* STATE CARDS */
+.nv-selector-states {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 64px;
+}
+.nv-state-card {
+  cursor: pointer; background: rgba(255,255,255,0.5); border: 1px solid var(--line);
+  border-radius: 18px; padding: 32px 22px; text-align: center;
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); position: relative; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  font-family: inherit; color: inherit;
+}
+.nv-state-card::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--copper), var(--copper-glow));
+  transform: scaleX(0); transform-origin: center;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.nv-state-card:hover {
+  background: rgba(255,255,255,0.85); transform: translateY(-4px);
+  box-shadow: var(--shadow-md); border-color: var(--copper-glow);
+}
+.nv-state-card.is-active {
+  background: var(--forest-deep); border-color: var(--forest-deep);
+  transform: translateY(-4px); box-shadow: var(--shadow-copper);
+}
+.nv-state-card.is-active::after { transform: scaleX(1); }
+.nv-state-icon { width: 38px; height: 38px; color: var(--forest); transition: color 0.5s ease; }
+.nv-state-icon svg { width: 100%; height: 100%; }
+.nv-state-card.is-active .nv-state-icon { color: var(--copper-glow); }
+.nv-state-name {
+  font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic;
+  font-size: 24px; color: var(--ink); letter-spacing: -0.01em; transition: color 0.5s ease;
+}
+.nv-state-card.is-active .nv-state-name { color: var(--cream); }
+.nv-state-hint {
+  font-family: 'Jost', sans-serif; font-weight: 400; font-size: 10.5px;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted);
+  transition: color 0.5s ease;
+}
+.nv-state-card.is-active .nv-state-hint { color: var(--copper-glow); }
+
+/* DETAIL */
+.nv-selector-detail {
+  background: rgba(255,255,255,0.6); border: 1px solid var(--line);
+  border-radius: 24px; padding: 64px 64px 56px; position: relative; overflow: hidden;
+  min-height: 380px; box-shadow: var(--shadow-md); backdrop-filter: blur(8px);
+}
+.nv-selector-detail::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--forest) 0%, var(--copper) 50%, var(--copper-glow) 100%);
+}
+.nv-detail-content { opacity: 0; transform: translateY(10px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.nv-detail-content.is-visible { opacity: 1; transform: translateY(0); }
+.nv-detail-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: start; }
+
+.nv-detail-eyebrow {
+  display: flex; align-items: center; gap: 14px;
+  font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--copper); margin-bottom: 22px; font-weight: 500;
+}
+.nv-detail-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--copper); }
+.nv-detail-title {
+  font-family: 'Cormorant Garamond', serif; font-weight: 300;
+  font-size: clamp(32px, 4vw, 50px); line-height: 1.1; color: var(--ink);
+  margin-bottom: 30px; letter-spacing: -0.015em;
+}
+.nv-detail-title em { font-style: italic; color: var(--forest); font-weight: 400; }
+.nv-detail-desc {
+  font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 19px;
+  line-height: 1.65; color: var(--ink-soft); margin-bottom: 32px;
+}
+.nv-detail-aside { border-left: 1px solid var(--line); padding-left: 44px; padding-top: 8px; }
+.nv-aside-block { margin-bottom: 34px; }
+.nv-aside-block:last-child { margin-bottom: 0; }
+.nv-aside-label {
+  font-family: 'Jost', sans-serif; font-size: 10.5px; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 12px; font-weight: 500;
+}
+.nv-aside-value {
+  font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic;
+  font-size: 22px; color: var(--ink); line-height: 1.45;
+}
+.nv-oils { display: flex; flex-direction: column; gap: 10px; }
+.nv-oil {
+  display: flex; align-items: center; gap: 14px;
+  font-family: 'Jost', sans-serif; font-size: 14.5px; font-weight: 400; color: var(--ink-soft);
+}
+.nv-oil::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--copper); flex-shrink: 0; }
+
+.nv-price-tag {
+  display: inline-flex; align-items: baseline; gap: 16px; padding: 20px 32px;
+  background: var(--ink); color: var(--cream); border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+.nv-price-duration {
+  font-family: 'Jost', sans-serif; font-size: 11px; letter-spacing: 0.24em;
+  text-transform: uppercase; color: var(--copper-glow); opacity: 0.85;
+}
+.nv-price-amount {
+  font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400;
+  font-size: 36px; line-height: 1;
+}
+.nv-price-currency {
+  font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 400; letter-spacing: 0.1em;
+}
+
+.nv-detail-cta { margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--line); }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .nv-selector-page { padding: 110px 0 60px; }
+  .nv-selector-container { padding: 0 24px; }
+  .nv-selector-hero { margin-bottom: 56px; }
+  .nv-selector-states { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 48px; }
+  .nv-state-card { padding: 24px 16px; border-radius: 14px; }
+  .nv-state-name { font-size: 20px; }
+  .nv-selector-detail { padding: 40px 28px 36px; border-radius: 18px; }
+  .nv-detail-grid { grid-template-columns: 1fr; gap: 36px; }
+  .nv-detail-aside { border-left: none; border-top: 1px solid var(--line); padding-left: 0; padding-top: 32px; }
+}
+@media (max-width: 520px) {
+  .nv-selector-states { grid-template-columns: 1fr; }
+}
