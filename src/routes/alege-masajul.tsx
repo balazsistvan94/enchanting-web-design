@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import "../styles/nevis.css";
 import nevisLogo from "@/assets/nevis-logo.png";
 
@@ -33,7 +33,7 @@ type Protocol = {
   forWhom: string;
   duration: string;
   price: string;
-  icon: JSX.Element;
+  icon: ReactNode;
 };
 
 const protocols: Protocol[] = [
