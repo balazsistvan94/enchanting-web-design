@@ -647,7 +647,7 @@
 .nv-ctx-page {
   position: relative;
   background: var(--cream);
-  padding: 140px 24px 80px;
+  padding: 120px 24px 80px;
   min-height: 100vh;
   overflow: hidden;
 }
@@ -662,31 +662,32 @@
   position: relative; z-index: 1;
   max-width: 1280px; margin: 0 auto;
   display: grid; grid-template-columns: repeat(12, 1fr);
-  gap: 60px 48px; align-items: start;
+  gap: 56px 48px; align-items: start;
 }
 
 /* ----- LEFT (cols 1–7) ----- */
-.nv-ctx-left { grid-column: span 7; display: flex; flex-direction: column; gap: 56px; }
+.nv-ctx-left { grid-column: span 7; display: flex; flex-direction: column; gap: 48px; }
 
 .nv-ctx-h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(64px, 9vw, 140px);
-  font-weight: 400; line-height: .82; letter-spacing: -0.03em;
+  font-size: clamp(40px, 4.6vw, 64px);
+  font-weight: 400; line-height: .95; letter-spacing: -0.02em;
   color: #1e4945; margin: 0;
 }
 .nv-ctx-h1 .nv-ctx-h1-it {
-  display: block; font-style: italic; font-weight: 400;
-  color: var(--copper); margin-left: clamp(40px, 8vw, 110px);
+  display: inline; font-style: italic; font-weight: 400;
+  color: var(--copper); margin-left: 14px;
 }
 .nv-ctx-eyebrow-row {
-  margin-top: 28px; display: flex; align-items: center; gap: 22px;
+  margin-top: 18px; display: flex; align-items: center; gap: 18px;
 }
-.nv-ctx-eyebrow-line { height: 1px; width: 96px; background: var(--copper); }
+.nv-ctx-eyebrow-line { height: 1px; width: 64px; background: var(--copper); }
 .nv-ctx-eyebrow-txt {
-  font-family: 'Jost', sans-serif; font-size: 12px;
+  font-family: 'Jost', sans-serif; font-size: 11px;
   color: color-mix(in oklab, #1e4945 70%, transparent);
   text-transform: uppercase; letter-spacing: 0.3em;
 }
+
 
 .nv-ctx-img-collage { position: relative; display: grid; grid-template-columns: repeat(6, 1fr); }
 .nv-ctx-img {
