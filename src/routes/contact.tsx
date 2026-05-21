@@ -20,6 +20,9 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
+const HERO_IMG = "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80";
+const ASIDE_IMG = "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80";
+
 function ContactPage() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
@@ -81,30 +84,57 @@ function ContactPage() {
         <button className="nv-mobile" aria-label="Meniu">☰</button>
       </nav>
 
-      {/* PAGE */}
       <main className="nv-contact-page">
+        {/* HERO BAND — forest deep */}
+        <section className="nv-ct-hero">
+          <div className="nv-ct-hero-bg" aria-hidden>
+            <span className="nv-ct-orb nv-ct-orb-1" />
+            <span className="nv-ct-orb nv-ct-orb-2" />
+            <span className="nv-ct-grain" />
+          </div>
+          <div className="nv-ct-hero-inner">
+            <div className="nv-ct-hero-left reveal">
+              <div className="nv-ct-eyebrow">
+                <span className="nv-ct-dot" /> Suntem aici pentru tine
+              </div>
+              <h1 className="nv-ct-h1">
+                Hai să <em>vorbim</em>.<br />
+                <span className="nv-ct-h1-soft">Liniștea începe</span><br />
+                cu un <em>cuvânt</em>.
+              </h1>
+              <p className="nv-ct-lead">
+                Fie că vrei să rezervi un ritual sau doar să afli mai multe —
+                răspundem personal, fără grabă, ca într-o conversație de seară.
+              </p>
+              <div className="nv-ct-hero-cta">
+                <a href="tel:+40732402136" className="nv-btn nv-btn-cream">
+                  0732 402 136
+                </a>
+                <a href="mailto:office@spanevis.ro" className="nv-ct-hero-link">
+                  office@spanevis.ro →
+                </a>
+              </div>
+            </div>
+            <div className="nv-ct-hero-right reveal">
+              <div className="nv-ct-hero-img" style={{ backgroundImage: `url(${HERO_IMG})` }} aria-hidden />
+              <div className="nv-ct-hero-badge">
+                <span className="nv-ct-badge-num">04</span>
+                <span className="nv-ct-badge-lbl">moduri<br/>de a ne găsi</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <div className="nv-selector-container">
 
-          {/* HERO */}
-          <section className="nv-contact-hero reveal">
-            <div className="nv-selector-eyebrow">Suntem aici pentru tine</div>
-            <h1 className="nv-selector-h1">
-              Contactează-<em>ne</em>
-            </h1>
-            <p className="nv-selector-lead">
-              Fie că vrei să rezervi un ritual, fie că ai o întrebare —
-              <br />ne face plăcere să auzim de la tine.
-            </p>
-          </section>
-
-          {/* INFO */}
-          <div className="nv-selector-instruction reveal">
+          {/* INFO STRIP */}
+          <div className="nv-selector-instruction reveal" style={{ marginTop: 0 }}>
             <span>01 — Informații de contact</span>
             <span className="nv-selector-line" />
           </div>
 
           <section className="nv-contact-grid reveal">
-            <article className="nv-contact-card">
+            <article className="nv-contact-card nv-contact-card--accent">
               <div className="nv-contact-icon" aria-hidden>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
                   <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" strokeLinecap="round" strokeLinejoin="round" />
@@ -154,14 +184,69 @@ function ContactPage() {
             </article>
           </section>
 
+          {/* MAP SECTION */}
+          <div className="nv-selector-instruction reveal">
+            <span>02 — Ne găsești ușor</span>
+            <span className="nv-selector-line" />
+          </div>
+
+          <section className="nv-ct-map-section reveal">
+            <div className="nv-ct-map-side">
+              <div className="nv-ct-eyebrow nv-ct-eyebrow--dark">
+                <span className="nv-ct-dot nv-ct-dot--copper" /> Oradea · Lăpușului 2
+              </div>
+              <h2 className="nv-ct-map-title">
+                În inima orașului,<br />la <em>doi pași</em> de natură.
+              </h2>
+              <p className="nv-ct-map-desc">
+                Hotelul Nevis se află într-o zonă liniștită din Oradea, cu acces facil
+                din centru și parcare gratuită pentru oaspeți. Aer curat, copaci bătrâni
+                și un SPA care te așteaptă.
+              </p>
+              <ul className="nv-ct-map-list">
+                <li><strong>5 min</strong><span>de centrul Oradei</span></li>
+                <li><strong>15 min</strong><span>de Aeroportul Oradea</span></li>
+                <li><strong>Gratuit</strong><span>parcare pentru oaspeți</span></li>
+              </ul>
+              <a
+                href="https://maps.google.com/?q=Hotel+Nevis+Strada+Lapusului+2+Oradea"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nv-btn nv-btn-primary"
+              >
+                Deschide în Google Maps
+              </a>
+            </div>
+            <div className="nv-ct-map-frame">
+              <iframe
+                title="Hartă Hotel Nevis Oradea"
+                src="https://www.google.com/maps?q=Hotel+Nevis+Strada+Lapusului+2+Oradea&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+              <div className="nv-ct-map-pin" aria-hidden>
+                <div className="nv-ct-map-pin-inner">
+                  <span className="nv-ct-pin-label">Hotel Nevis</span>
+                  <span className="nv-ct-pin-sub">Lăpușului 2, Oradea</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* FORM */}
           <div className="nv-selector-instruction reveal">
-            <span>02 — Scrie-ne un mesaj</span>
+            <span>03 — Scrie-ne un mesaj</span>
             <span className="nv-selector-line" />
           </div>
 
           <section className="nv-contact-form-wrap reveal">
             <div className="nv-contact-form-side">
+              <div
+                className="nv-ct-form-img"
+                style={{ backgroundImage: `url(${ASIDE_IMG})` }}
+                aria-hidden
+              />
               <div className="nv-detail-eyebrow">Programare sau întrebare</div>
               <h2 className="nv-detail-title">
                 Spune-ne <em>cum te putem ajuta</em>
@@ -208,6 +293,17 @@ function ContactPage() {
                 <span className="nv-form-note">Răspundem în maxim 24 de ore</span>
               </div>
             </form>
+          </section>
+
+          {/* CLOSING CTA */}
+          <section className="nv-ct-closing reveal">
+            <div className="nv-ct-closing-inner">
+              <span className="nv-ct-closing-eyebrow">Vino cum ești · Pleacă altfel</span>
+              <h2 className="nv-ct-closing-h2">
+                Te <em>așteptăm</em>.
+              </h2>
+              <p>Programări telefonice: <a href="tel:+40732402136">0732 402 136</a></p>
+            </div>
           </section>
 
         </div>
