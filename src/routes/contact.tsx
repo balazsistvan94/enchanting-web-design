@@ -20,8 +20,7 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const HERO_IMG = "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=80";
-const ASIDE_IMG = "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=80";
+const HERO_IMG = "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1400&q=80";
 
 function ContactPage() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -29,19 +28,6 @@ function ContactPage() {
   const [sent, setSent] = useState(false);
 
   useEffect(() => {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("in");
-            io.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -80px 0px" }
-    );
-    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
-
     const onScroll = () => {
       if (window.scrollY > 80) navRef.current?.classList.add("scrolled");
       else navRef.current?.classList.remove("scrolled");
@@ -55,7 +41,6 @@ function ContactPage() {
     window.addEventListener("mousemove", onMove);
 
     return () => {
-      io.disconnect();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("mousemove", onMove);
     };
@@ -73,7 +58,9 @@ function ContactPage() {
 
       {/* NAV */}
       <nav ref={navRef} className="nv-nav">
-        <Link to="/" aria-label="Nevis"><img src={nevisLogo} alt="Hotel Nevis Wellness & SPA" className="nv-logo-img" /></Link>
+        <Link to="/" aria-label="Nevis">
+          <img src={nevisLogo} alt="Hotel Nevis Wellness & SPA" className="nv-logo-img" />
+        </Link>
         <ul className="nv-menu">
           <li><Link to="/" hash="experiente">Experiențe</Link></li>
           <li><Link to="/" hash="pachete">Pachete</Link></li>
@@ -84,228 +71,104 @@ function ContactPage() {
         <button className="nv-mobile" aria-label="Meniu">☰</button>
       </nav>
 
-      <main className="nv-contact-page">
-        {/* HERO BAND — forest deep */}
-        <section className="nv-ct-hero">
-          <div className="nv-ct-hero-bg" aria-hidden>
-            <span className="nv-ct-orb nv-ct-orb-1" />
-            <span className="nv-ct-orb nv-ct-orb-2" />
-            <span className="nv-ct-grain" />
-          </div>
-          <div className="nv-ct-hero-inner">
-            <div className="nv-ct-hero-left reveal">
-              <div className="nv-ct-eyebrow">
-                <span className="nv-ct-dot" /> Suntem aici pentru tine
-              </div>
-              <h1 className="nv-ct-h1">
-                Hai să <em>vorbim</em>.<br />
-                <span className="nv-ct-h1-soft">Liniștea începe</span><br />
-                cu un <em>cuvânt</em>.
+      <main className="nv-ctx-page">
+        <div className="nv-ctx-grain" aria-hidden />
+
+        <div className="nv-ctx-wrap">
+          {/* LEFT */}
+          <div className="nv-ctx-left">
+            <div>
+              <h1 className="nv-ctx-h1">
+                Contactați
+                <span className="nv-ctx-h1-it">Spa Nevis</span>
               </h1>
-              <p className="nv-ct-lead">
-                Fie că vrei să rezervi un ritual sau doar să afli mai multe —
-                răspundem personal, fără grabă, ca într-o conversație de seară.
-              </p>
-              <div className="nv-ct-hero-cta">
-                <a href="tel:+40732402136" className="nv-btn nv-btn-cream">
-                  0732 402 136
-                </a>
-                <a href="mailto:office@spanevis.ro" className="nv-ct-hero-link">
-                  office@spanevis.ro →
-                </a>
+              <div className="nv-ctx-eyebrow-row">
+                <span className="nv-ctx-eyebrow-line" />
+                <span className="nv-ctx-eyebrow-txt">Destinația relaxării tale</span>
               </div>
             </div>
-            <div className="nv-ct-hero-right reveal">
-              <div className="nv-ct-hero-img" style={{ backgroundImage: `url(${HERO_IMG})` }} aria-hidden />
-              <div className="nv-ct-hero-badge">
-                <span className="nv-ct-badge-num">04</span>
-                <span className="nv-ct-badge-lbl">moduri<br/>de a ne găsi</span>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        <div className="nv-selector-container">
-
-          {/* INFO STRIP */}
-          <div className="nv-selector-instruction reveal" style={{ marginTop: 0 }}>
-            <span>01 — Informații de contact</span>
-            <span className="nv-selector-line" />
-          </div>
-
-          <section className="nv-contact-grid reveal">
-            <article className="nv-contact-card nv-contact-card--accent">
-              <div className="nv-contact-icon" aria-hidden>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" strokeLinecap="round" strokeLinejoin="round" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-              </div>
-              <div className="nv-contact-label">Locație</div>
-              <div className="nv-contact-value">Hotel Nevis</div>
-              <div className="nv-contact-sub">Strada Lăpușului 2, Oradea</div>
-              <a
-                href="https://maps.google.com/?q=Hotel+Nevis+Strada+Lapusului+2+Oradea"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nv-contact-link"
-              >
-                Deschide harta →
-              </a>
-            </article>
-
-            <article className="nv-contact-card">
-              <div className="nv-contact-icon" aria-hidden>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
-                  <path d="M4 5h16v14H4z" strokeLinejoin="round" />
-                  <path d="m4 6 8 7 8-7" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <div className="nv-contact-label">Email</div>
-              <div className="nv-contact-value">office@spanevis.ro</div>
-              <div className="nv-contact-sub">Răspundem în maxim 24 de ore</div>
-              <a href="mailto:office@spanevis.ro" className="nv-contact-link">
-                Trimite un email →
-              </a>
-            </article>
-
-            <article className="nv-contact-card">
-              <div className="nv-contact-icon" aria-hidden>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <div className="nv-contact-label">Telefon</div>
-              <div className="nv-contact-value">0732 402 136</div>
-              <div className="nv-contact-sub">Luni — Duminică, 09:00 — 21:00</div>
-              <a href="tel:+40732402136" className="nv-contact-link">
-                Sună acum →
-              </a>
-            </article>
-          </section>
-
-          {/* MAP SECTION */}
-          <div className="nv-selector-instruction reveal">
-            <span>02 — Ne găsești ușor</span>
-            <span className="nv-selector-line" />
-          </div>
-
-          <section className="nv-ct-map-section reveal">
-            <div className="nv-ct-map-side">
-              <div className="nv-ct-eyebrow nv-ct-eyebrow--dark">
-                <span className="nv-ct-dot nv-ct-dot--copper" /> Oradea · Lăpușului 2
-              </div>
-              <h2 className="nv-ct-map-title">
-                În inima orașului,<br />la <em>doi pași</em> de natură.
-              </h2>
-              <p className="nv-ct-map-desc">
-                Hotelul Nevis se află într-o zonă liniștită din Oradea, cu acces facil
-                din centru și parcare gratuită pentru oaspeți. Aer curat, copaci bătrâni
-                și un SPA care te așteaptă.
-              </p>
-              <ul className="nv-ct-map-list">
-                <li><strong>5 min</strong><span>de centrul Oradei</span></li>
-                <li><strong>15 min</strong><span>de Aeroportul Oradea</span></li>
-                <li><strong>Gratuit</strong><span>parcare pentru oaspeți</span></li>
-              </ul>
-              <a
-                href="https://maps.google.com/?q=Hotel+Nevis+Strada+Lapusului+2+Oradea"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="nv-btn nv-btn-primary"
-              >
-                Deschide în Google Maps
-              </a>
-            </div>
-            <div className="nv-ct-map-frame">
-              <iframe
-                title="Hartă Hotel Nevis Oradea"
-                src="https://www.google.com/maps?q=Hotel+Nevis+Strada+Lapusului+2+Oradea&output=embed"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
-              <div className="nv-ct-map-pin" aria-hidden>
-                <div className="nv-ct-map-pin-inner">
-                  <span className="nv-ct-pin-label">Hotel Nevis</span>
-                  <span className="nv-ct-pin-sub">Lăpușului 2, Oradea</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* FORM */}
-          <div className="nv-selector-instruction reveal">
-            <span>03 — Scrie-ne un mesaj</span>
-            <span className="nv-selector-line" />
-          </div>
-
-          <section className="nv-contact-form-wrap reveal">
-            <div className="nv-contact-form-side">
+            <div className="nv-ctx-img-collage">
               <div
-                className="nv-ct-form-img"
-                style={{ backgroundImage: `url(${ASIDE_IMG})` }}
+                className="nv-ctx-img"
+                style={{ backgroundImage: `url(${HERO_IMG})` }}
                 aria-hidden
               />
-              <div className="nv-detail-eyebrow">Programare sau întrebare</div>
-              <h2 className="nv-detail-title">
-                Spune-ne <em>cum te putem ajuta</em>
-              </h2>
-              <p className="nv-detail-desc">
-                Completează formularul și un membru al echipei noastre îți va răspunde personal.
-                Pentru rezervări urgente, te rugăm să ne suni direct.
-              </p>
-              <div className="nv-contact-hours">
-                <div className="nv-aside-label">Program SPA</div>
-                <div className="nv-hours-row"><span>Luni — Vineri</span><span>09:00 — 21:00</span></div>
-                <div className="nv-hours-row"><span>Sâmbătă</span><span>10:00 — 21:00</span></div>
-                <div className="nv-hours-row"><span>Duminică</span><span>10:00 — 20:00</span></div>
+              <div className="nv-ctx-addr-card">
+                <span className="nv-ctx-lbl">Locație</span>
+                <p className="nv-ctx-addr">
+                  Hotel Nevis,<br />
+                  Strada Lăpușului 2,<br />
+                  Oradea, România
+                </p>
               </div>
             </div>
+          </div>
 
-            <form className="nv-contact-form" onSubmit={handleSubmit}>
-              <div className="nv-form-row">
-                <label className="nv-field">
-                  <span>Nume</span>
-                  <input type="text" name="name" required placeholder="Numele tău" />
-                </label>
-                <label className="nv-field">
-                  <span>Telefon</span>
-                  <input type="tel" name="phone" placeholder="07xx xxx xxx" />
-                </label>
-              </div>
-              <label className="nv-field">
-                <span>Email</span>
-                <input type="email" name="email" required placeholder="email@exemplu.ro" />
-              </label>
-              <label className="nv-field">
-                <span>Subiect</span>
-                <input type="text" name="subject" placeholder="Rezervare, întrebare, pachet cadou..." />
-              </label>
-              <label className="nv-field">
-                <span>Mesaj</span>
-                <textarea name="message" rows={5} required placeholder="Scrie-ne aici..." />
-              </label>
-              <div className="nv-form-actions">
-                <button type="submit" className="nv-btn nv-btn-primary">
+          {/* RIGHT */}
+          <div className="nv-ctx-right">
+            <div className="nv-ctx-quick">
+              <a href="tel:0732402136" className="nv-ctx-quick-item">
+                <span className="nv-ctx-quick-lbl">Programări telefonice</span>
+                <span className="nv-ctx-quick-val">0732 402 136</span>
+              </a>
+              <a href="mailto:office@spanevis.ro" className="nv-ctx-quick-item">
+                <span className="nv-ctx-quick-lbl">Corespondență</span>
+                <span className="nv-ctx-quick-val">office@spanevis.ro</span>
+              </a>
+            </div>
+
+            <div className="nv-ctx-form-card">
+              <h2 className="nv-ctx-form-title">Solicitați detalii</h2>
+              <form className="nv-ctx-form" onSubmit={handleSubmit}>
+                <div className="nv-ctx-field">
+                  <label className="nv-ctx-field-lbl" htmlFor="ctx-name">Nume Complet</label>
+                  <input id="ctx-name" type="text" name="name" required />
+                </div>
+                <div className="nv-ctx-field">
+                  <label className="nv-ctx-field-lbl" htmlFor="ctx-email">Adresă Email</label>
+                  <input id="ctx-email" type="email" name="email" required />
+                </div>
+                <div className="nv-ctx-field">
+                  <label className="nv-ctx-field-lbl" htmlFor="ctx-phone">Telefon (opțional)</label>
+                  <input id="ctx-phone" type="tel" name="phone" />
+                </div>
+                <div className="nv-ctx-field">
+                  <label className="nv-ctx-field-lbl" htmlFor="ctx-msg">Mesaj</label>
+                  <textarea id="ctx-msg" name="message" rows={3} required />
+                </div>
+                <button type="submit" className="nv-ctx-submit">
                   {sent ? "Mesaj trimis ✓" : "Trimite mesajul"}
                 </button>
-                <span className="nv-form-note">Răspundem în maxim 24 de ore</span>
+              </form>
+
+              <div className="nv-ctx-hours-row">
+                <div>
+                  <span className="nv-ctx-hours-lbl">Wellness Spa</span>
+                  <span className="nv-ctx-hours-day">Luni — Duminică</span>
+                </div>
+                <div className="nv-ctx-hours-time">08:00 — 22:00</div>
               </div>
-            </form>
-          </section>
-
-          {/* CLOSING CTA */}
-          <section className="nv-ct-closing reveal">
-            <div className="nv-ct-closing-inner">
-              <span className="nv-ct-closing-eyebrow">Vino cum ești · Pleacă altfel</span>
-              <h2 className="nv-ct-closing-h2">
-                Te <em>așteptăm</em>.
-              </h2>
-              <p>Programări telefonice: <a href="tel:+40732402136">0732 402 136</a></p>
             </div>
-          </section>
+          </div>
 
+          {/* MAP */}
+          <div className="nv-ctx-map">
+            <iframe
+              title="Hartă Hotel Nevis Oradea"
+              src="https://www.google.com/maps?q=Hotel+Nevis+Strada+Lapusului+2+Oradea&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+            <div className="nv-ctx-map-overlay">
+              <span className="nv-ctx-map-pin" aria-hidden />
+              <div className="nv-ctx-map-txt">
+                <span className="nv-ctx-map-h">Hotel Nevis</span>
+                <span className="nv-ctx-map-s">Lăpușului 2 · Oradea</span>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
 
